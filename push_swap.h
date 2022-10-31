@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/28 17:02:47 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:17:17 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,11 @@ void	sb(t_node *b);
 void	ss(t_node *a, t_node *b);
 void	pb(t_node *a, t_node *b);
 void	pa(t_node *a, t_node *b);
+void	ra(t_node *a);
+void	rb(t_node *b);
+void	rr(t_node *a, t_node *b);
+void	rra(t_node *a);
+void	rrb(t_node *b);
+void	rrr(t_node *a, t_node *b);
 
 #endif

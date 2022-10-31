@@ -1,7 +1,9 @@
 SRCS	= main.c \
 		  utils/list_config.c \
 		  utils/swap.c \
-		  utils/push.c
+		  utils/push.c \
+		  utils/rotate.c \
+		  utils/reverse_rotate.c
 
 OBJS	= $(SRCS:.c=.o)
 
