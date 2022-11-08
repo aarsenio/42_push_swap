@@ -6,45 +6,45 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:27:53 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/31 14:21:36 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:35:47 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_node *a)
+void	ra(void)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 
-	tmp = a->next;
-	a->next = a->next->next;
+	tmp = a()->next;
+	a()->next = a()->next->next;
 	tmp->next = NULL;
-	add_node(tmp, a);
+	add_node(tmp, a());
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_node *b)
+void	rb(void)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 
-	tmp = b->next;
-	b->next = b->next->next;
+	tmp = b()->next;
+	b()->next = b()->next->next;
 	tmp->next = NULL;
-	add_node(tmp, b);
+	add_node(tmp, b());
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_node *a, t_node *b)
+void	rr(void)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 
-	tmp = a->next;
-	a->next = a->next->next;
+	tmp = a()->next;
+	a()->next = a()->next->next;
 	tmp->next = NULL;
-	add_node(tmp, a);
-	tmp = b->next;
-	b->next = b->next->next;
+	add_node(tmp, a());
+	tmp = b()->next;
+	b()->next = b()->next->next;
 	tmp->next = NULL;
-	add_node(tmp, b);
+	add_node(tmp, b());
 	write(1, "rr\n", 3);
 }

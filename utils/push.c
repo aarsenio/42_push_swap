@@ -6,34 +6,34 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:27:47 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/28 17:03:54 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:36:39 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pb(t_node *a, t_node *b)
+void	pb(void)
 {
-	t_node	*tmp;
-	
-	if (!a->next)
+	t_stack	*tmp;
+
+	if (!a()->next)
 		return ;
-	tmp = a->next;
-	a->next = a->next->next;
-	tmp->next = b->next;
-	b->next = tmp;
+	tmp = a()->next;
+	a()->next = a()->next->next;
+	tmp->next = b()->next;
+	b()->next = tmp;
 	write(1, "pb\n", 3);
 }
 
-void	pa(t_node *a, t_node *b)
+void	pa(void)
 {
-	t_node	*tmp;
-	
-	if (!b->next)
+	t_stack	*tmp;
+
+	if (!b()->next)
 		return ;
-	tmp = b->next;
-	b->next = b->next->next;
-	tmp->next = a->next;
-	a->next = tmp;
+	tmp = b()->next;
+	b()->next = b()->next->next;
+	tmp->next = a()->next;
+	a()->next = tmp;
 	write(1, "pa\n", 3);
 }
