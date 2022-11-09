@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/08 21:34:28 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:36:19 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,9 @@ static void	redirect(int ac)
 	if (ac == 3 && a()->next->x > a()->next->next->x)
 		sa();
 	if (ac == 4)
-		algo3();
+		algo_3();
+	if (ac == 5 || ac == 6)
+		algo_5();
 }
 
 int	main(int ac, char **av)

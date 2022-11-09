@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/08 21:35:27 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:07:57 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ t_stack	*a(void);
 t_stack	*b(void);
 t_stack	*new_node(int n);
 void	add_node(t_stack *new, t_stack *l);
-void	print_list(t_stack *a);
+void	print_list(t_stack *x);
+int		list_size(t_stack *x);
+int		minmax(t_stack *x, int type);
 void	sa(void);
 void	sb(void);
 void	ss(void);
@@ -39,6 +41,7 @@ void	rr(void);
 void	rra(void);
 void	rrb(void);
 void	rrr(void);
-void	algo3(void);
+void	algo_3(void);
+void	algo_5(void);
 
 #endif

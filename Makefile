@@ -4,7 +4,7 @@ SRCS	= main.c \
 		  utils/push.c \
 		  utils/rotate.c \
 		  utils/reverse_rotate.c \
-		  utils/algorithm_3.c
+		  utils/algorithm.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -20,9 +20,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		$(CC) $(CFLAGS) $^ -o $@
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
 	$(RM) $(OBJS)

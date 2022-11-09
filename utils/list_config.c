@@ -6,17 +6,17 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/08 21:37:33 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:07:45 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	print_list(t_stack *a)
+void	print_list(t_stack *x)
 {
 	t_stack	*t;
 
-	t = a->next;
+	t = x->next;
 	while (t)
 	{
 		printf("%d\n", t->x);
@@ -47,4 +47,47 @@ t_stack	*new_node(int n)
 	new->next = NULL;
 	new->x = n;
 	return (new);
+}
+
+int	list_size(t_stack *x)
+{
+	int		i;
+	t_stack	*t;
+
+	t = x->next;
+	i = 0;
+	while (t)
+	{
+		i++;
+		t = t->next;
+	}
+	return (i);
+}
+
+int	minmax(t_stack *x, int type)
+{
+	int		i;
+	t_stack	*t;
+
+	t = x->next;
+	i = t->x;
+	if (type == 1)
+	{
+		while (t)
+		{
+			if (t->x > i)
+				i = t->x;
+			t = t->next;
+		}
+	}
+	if (type == 0)
+	{
+		while (t)
+		{
+			if (t->x < i)
+				i = t->x;
+			t = t->next;
+		}
+	}
+	return (i);
 }
