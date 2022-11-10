@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/10 13:08:49 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:59:23 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ static int	ft_atoi(const char *str)
 	i = 0;
 	num = 0;
 	signal = 1;
-	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		if (str[i++] == '-')
-			signal = -1;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '-')
 	{
-		num = (num * 10) + signal * (str[i++] - '0');
-		if ((num < 0) || num > INT_MAX)
-			return (-1);
+		signal = -1;
+		i++;
 	}
-	return (num);
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			print_error("Invalid character", 1);
+		num = (num * 10) + (str[i++] - '0');
+	}
+	return (num * signal);
 }
 
 t_stack	*a(void)
@@ -75,5 +75,5 @@ int	main(int ac, char **av)
 	print_list(a());
 	printf("stack b:\n");
 	print_list(b());
-	print_error("finish", 0);
+	print_error("", 0);
 }
