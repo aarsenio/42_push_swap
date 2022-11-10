@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/09 13:36:19 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:48:45 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ int	main(int ac, char **av)
 	print_list(a());
 	printf("stack b:\n");
 	print_list(b());
+	print_error("finish", 0);
 }

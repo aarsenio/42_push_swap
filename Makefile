@@ -4,7 +4,8 @@ SRCS	= main.c \
 		  utils/push.c \
 		  utils/rotate.c \
 		  utils/reverse_rotate.c \
-		  utils/algorithm.c
+		  utils/algorithm.c \
+		  utils/exit_program.c
 
 OBJS	= $(SRCS:.c=.o)
 
