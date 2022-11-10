@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/10 12:49:13 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:08:31 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	rrr(void);
 void	algo_3(void);
 void	algo_5(void);
 void	print_error(char *str, int error);
+void	duplicate_numbers(void);
 
 #endif
