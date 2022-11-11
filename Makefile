@@ -6,7 +6,7 @@ SRCS	= main.c \
 		  utils/reverse_rotate.c \
 		  utils/algorithm.c \
 		  utils/exit_program.c \
-		  utils/parsing.c
+		  utils/list_call.c
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 13:01:54 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:37:06 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,23 @@ static int	ft_atoi(const char *str)
 	return (num * signal);
 }
 
-t_stack	*a(void)
+static void	duplicate_numbers(void)
 {
-	static t_stack	a;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
-	return (&a);
-}
-
-t_stack	*b(void)
-{
-	static t_stack	b;
-
-	return (&b);
+	tmp = a()->next;
+	while (tmp)
+	{
+		tmp2 = tmp->next;
+		while (tmp2)
+		{
+			if (tmp->x == tmp2->x)
+				print_error("Duplicated Numbers", 1);
+			tmp2 = tmp2->next;
+		}
+		tmp = tmp->next;
+	}
 }
 
 static void	redirect(int ac)
@@ -66,6 +71,7 @@ int	main(int ac, char **av)
 {
 	int	i;
 
+	reverse('E');
 	if (ac < 2)
 		return (0);
 	i = 0;
