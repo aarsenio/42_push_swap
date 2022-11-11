@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/10 13:08:31 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:36:16 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	add_node(t_stack *new, t_stack *l);
 void	print_list(t_stack *x);
 int		list_size(t_stack *x);
 int		minmax(t_stack *x, int type);
+int		minmax_pos(int x);
 void	sa(void);
 void	sb(void);
 void	ss(void);
@@ -43,6 +44,7 @@ void	rrb(void);
 void	rrr(void);
 void	algo_3(void);
 void	algo_5(void);
+void	exit_program(void);
 void	print_error(char *str, int error);
 void	duplicate_numbers(void);
 

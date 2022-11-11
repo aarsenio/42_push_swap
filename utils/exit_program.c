@@ -6,13 +6,13 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:00:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/10 13:07:18 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 11:49:33 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	exit_program(void)
+void	exit_program(void)
 {
 	t_stack	*tmp;
 

@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/09 13:07:45 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:50:17 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,21 @@ int	minmax(t_stack *x, int type)
 				i = t->x;
 			t = t->next;
 		}
+	}
+	return (i);
+}
+
+int	minmax_pos(int type)
+{
+	int	i;
+	t_stack	*tmp;
+
+	i = 1;
+	tmp = a()->next;
+	while (tmp->x != minmax(a(), type))
+	{
+		i++;
+		tmp = tmp->next;
 	}
 	return (i);
 }

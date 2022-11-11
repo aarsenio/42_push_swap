@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:01:57 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/09 14:23:02 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:49:05 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ void	algo_5(void)
 	while (list_size(a()) > 3)
 	{
 		if (a()->next->x != minmax(a(), 0))
-			ra();
+		{
+			if (minmax_pos(0) <= (list_size(a()) / 2))
+				ra();
+			else
+				rra();
+		}
 		else
 			pb();
 	}
