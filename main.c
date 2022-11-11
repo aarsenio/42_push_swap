@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 14:37:06 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:06:45 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ static int	ft_atoi(const char *str)
 	i = 0;
 	num = 0;
 	signal = 1;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		signal = -1;
+		if (str[i] == '-')
+			signal = -1;
 		i++;
 	}
 	while (str[i])
@@ -71,7 +72,6 @@ int	main(int ac, char **av)
 {
 	int	i;
 
-	reverse('E');
 	if (ac < 2)
 		return (0);
 	i = 0;
