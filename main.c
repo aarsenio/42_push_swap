@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 12:33:46 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:01:54 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static int	ft_atoi(const char *str)
 {
-	int	i;
-	int	num;
-	int	signal;
+	int		i;
+	int		signal;
+	long	num;
 
 	i = 0;
 	num = 0;
@@ -33,6 +33,8 @@ static int	ft_atoi(const char *str)
 			print_error("Invalid character", 1);
 		num = (num * 10) + (str[i++] - '0');
 	}
+	if (num > INT_MAX || num < INT_MIN)
+		print_error("oops", 1);
 	return (num * signal);
 }
 

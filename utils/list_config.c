@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 12:50:17 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:03:22 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	minmax(t_stack *x, int type)
 
 int	minmax_pos(int type)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	i = 1;
