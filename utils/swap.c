@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:27:56 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/08 21:35:39 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:21:44 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	sa(void)
 	t_stack	*tmp;
 
 	if (!a()->next || !a()->next->next)
-	{
-		write(1, "nao fez\n", 9);
 		return ;
-	}
 	tmp = a()->next;
 	a()->next = a()->next->next;
 	tmp->next = a()->next->next;
@@ -33,10 +30,7 @@ void	sb(void)
 	t_stack	*tmp;
 
 	if (!b()->next || !b()->next->next)
-	{
-		write(1, "nao fez\n", 9);
 		return ;
-	}
 	tmp = b()->next;
 	b()->next = b()->next->next;
 	tmp->next = b()->next->next;
@@ -49,10 +43,7 @@ void	ss(void)
 	t_stack	*tmp;
 
 	if (!a()->next || !a()->next->next || !b()->next || !b()->next->next)
-	{
-		write(1, "nao fez\n", 9);
 		return ;
-	}
 	tmp = a()->next;
 	a()->next = a()->next->next;
 	tmp->next = a()->next->next;
