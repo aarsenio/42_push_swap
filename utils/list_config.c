@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 19:30:53 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:58:26 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,22 @@ void	print_list(t_stack *x)
 	t = x->next;
 	while (t)
 	{
-		printf("%d\n", t->x);
+		printf("%d  -  ", t->x);
+		printf("%d\n", t->i);
 		t = t->next;
 	}
 }
 
-void	add_node(t_stack *new, t_stack *l)
+void	add_node(t_stack *new, t_stack *x)
 {
-	while (l)
+	while (x)
 	{
-		if (!l->next)
+		if (!x->next)
 		{
-			l->next = new;
+			x->next = new;
 			break ;
 		}
-		l = l->next;
+		x = x->next;
 	}
 }
 
@@ -70,13 +71,13 @@ int	minmax(t_stack *x, int type)
 	t_stack	*t;
 
 	t = x->next;
-	i = t->x;
+	i = t->i;
 	if (type == 1)
 	{
 		while (t)
 		{
-			if (t->x > i)
-				i = t->x;
+			if (t->i > i)
+				i = t->i;
 			t = t->next;
 		}
 	}
@@ -84,25 +85,45 @@ int	minmax(t_stack *x, int type)
 	{
 		while (t)
 		{
-			if (t->x < i)
-				i = t->x;
+			if (t->i < i)
+				i = t->i;
 			t = t->next;
 		}
 	}
 	return (i);
 }
 
-int	minmax_pos(int type)
+void	set_index(void)
 {
-	int		i;
-	t_stack	*tmp;
+	t_stack	*t;
+	t_stack	*t2;
 
-	i = 1;
-	tmp = a()->next;
-	while (tmp->x != minmax(a(), type))
+	t = a()->next;
+	while (t)
 	{
-		i++;
-		tmp = tmp->next;
+		t2 = a()->next;
+		while (t2)
+		{
+			if (t->x > t2->x)
+				t->i++;
+			t2 = t2->next;
+		}
+		t = t->next;
 	}
-	return (i);
+}
+
+int	smart_rotate(t_stack *x, int type)
+{
+	t_stack *t;
+	int		i;
+
+	t = a()->next;
+	i = 1;
+	while (t)
+	{
+		if (t->i == minmax(x, type))
+			break ;
+		i++;
+	}
+	return (i > (list_size(x) / 2));	
 }

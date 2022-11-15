@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 19:28:08 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/15 22:03:18 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,9 @@ int	main(int ac, char **av)
 	(void)ac;
 	parse_arg((++av));
 	duplicate_numbers();
+	set_index();
 	redirect();
+	printf("%i\n", minmax(a(), 0));
 	printf("stack a:\n");
 	print_list(a());
 	printf("stack b:\n");

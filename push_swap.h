@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 19:28:28 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:58:38 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@
 typedef struct s_stack
 {
 	int				x;
-	int				index;
+	int				i;
 	struct s_stack	*next;
 }t_stack;
 
 t_stack	*a(void);
 t_stack	*b(void);
 t_stack	*new_node(int n);
-void	add_node(t_stack *new, t_stack *l);
+void	add_node(t_stack *new, t_stack *x);
 void	print_list(t_stack *x);
 int		list_size(t_stack *x);
 int		minmax(t_stack *x, int type);
-int		minmax_pos(int x);
+void	set_index(void);
+int		smart_rotate(t_stack *x, int type);
 void	sa(void);
 void	sb(void);
 void	ss(void);
