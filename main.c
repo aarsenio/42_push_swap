@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 17:06:45 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:42:26 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,45 @@ static void	duplicate_numbers(void)
 	}
 }
 
-static void	redirect(int ac)
+static void	parsing(char *str)
 {
-	if (ac == 3 && a()->next->x > a()->next->next->x)
+	int		i;
+	int		j;
+	int		x;
+	char	*tmp;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		x = 0;
+		if (str[i] != ' ')
+		{
+			while (str[i + x] && str[i + x] != ' ')
+				x++;
+			printf("x: %i\n", x);
+			tmp = malloc((x + 1) * sizeof(char));
+			while (str[i] && str[i] != ' ')
+				tmp[j++] = str[i++];
+			printf("size of j: %i\n", j);
+			printf("tmp: %s\n", tmp);
+			tmp[++j] = '\0';
+			add_node(new_node(ft_atoi(tmp)), a());
+			free(tmp);
+		}
+		i++;
+	}
+	if (list_size(a()) < 1)
+		print_error("No Arguments", 1);
+}
+
+static void	redirect(void)
+{
+	if (list_size(a()) == 3 && a()->next->x > a()->next->next->x)
 		sa();
-	if (ac == 4)
+	if (list_size(a()) == 4)
 		algo_3();
-	if (ac == 5 || ac == 6)
+	if (list_size(a()) == 5 || list_size(a()) == 6)
 		algo_5();
 }
 
@@ -74,11 +106,14 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
+	if (ac == 2)
+		parsing(av[1]);
 	i = 0;
-	while (av[++i])
-		add_node(new_node(ft_atoi(av[i])), a());
+	if (ac > 2)
+		while (av[++i])
+			add_node(new_node(ft_atoi(av[i])), a());
 	duplicate_numbers();
-	redirect(ac);
+	redirect();
 	printf("stack a:\n");
 	print_list(a());
 	printf("stack b:\n");
