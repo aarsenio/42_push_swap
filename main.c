@@ -6,40 +6,43 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/13 15:42:26 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:28:08 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-static int	ft_atoi(const char *str)
+static long	atoi_parse(char **str)
 {
-	int		i;
-	int		signal;
-	long	num;
+	int			s;
+	long long	n;
 
-	i = 0;
-	num = 0;
-	signal = 1;
-	if (str[i] == '-' || str[i] == '+')
+	s = 1;
+	n = 0;
+	while ((**str > 8 && **str < 14) || **str == 32)
+		*str += 1;
+	if (**str == '-' || **str == '+')
 	{
-		if (str[i] == '-')
-			signal = -1;
-		i++;
+		if (**str == '-')
+			s *= -1;
+		*str += 1;
 	}
-	while (str[i])
+	while (**str >= '0' && **str <= '9')
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			print_error("Invalid character", 1);
-		num = (num * 10) + (str[i++] - '0');
+		n = n * 10 + s * (**str - '0');
+		if (n < INT_MIN || n > INT_MAX)
+			print_error("Out of int range", 1);
+		*str += 1;
 	}
-	if (num > INT_MAX || num < INT_MIN)
-		print_error("oops", 1);
-	return (num * signal);
+	if (!((**str > 8 && **str < 14) || **str == 32) && **str)
+		print_error("Invalid character", 1);
+	while ((**str > 8 && **str < 14) || **str == 32)
+		*str += 1;
+	return (n);
 }
 
-static void	duplicate_numbers(void)
+void	duplicate_numbers(void)
 {
 	t_stack	*tmp;
 	t_stack	*tmp2;
@@ -58,60 +61,33 @@ static void	duplicate_numbers(void)
 	}
 }
 
-static void	parsing(char *str)
+static void	parse_arg(char **str)
 {
-	int		i;
-	int		j;
-	int		x;
-	char	*tmp;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		j = 0;
-		x = 0;
-		if (str[i] != ' ')
-		{
-			while (str[i + x] && str[i + x] != ' ')
-				x++;
-			printf("x: %i\n", x);
-			tmp = malloc((x + 1) * sizeof(char));
-			while (str[i] && str[i] != ' ')
-				tmp[j++] = str[i++];
-			printf("size of j: %i\n", j);
-			printf("tmp: %s\n", tmp);
-			tmp[++j] = '\0';
-			add_node(new_node(ft_atoi(tmp)), a());
-			free(tmp);
-		}
+		while (str[i] && *str[i])
+			add_node(new_node(atoi_parse(&str[i])), a());
 		i++;
 	}
-	if (list_size(a()) < 1)
-		print_error("No Arguments", 1);
 }
 
-static void	redirect(void)
+void	redirect(void)
 {
-	if (list_size(a()) == 3 && a()->next->x > a()->next->next->x)
+	if (list_size(a()) == 2 && a()->next->x > a()->next->next->x)
 		sa();
-	if (list_size(a()) == 4)
+	if (list_size(a()) == 3)
 		algo_3();
-	if (list_size(a()) == 5 || list_size(a()) == 6)
+	if (list_size(a()) == 4 || list_size(a()) == 5)
 		algo_5();
 }
 
 int	main(int ac, char **av)
 {
-	int	i;
-
-	if (ac < 2)
-		return (0);
-	if (ac == 2)
-		parsing(av[1]);
-	i = 0;
-	if (ac > 2)
-		while (av[++i])
-			add_node(new_node(ft_atoi(av[i])), a());
+	(void)ac;
+	parse_arg((++av));
 	duplicate_numbers();
 	redirect();
 	printf("stack a:\n");
