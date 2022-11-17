@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 11:21:38 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:21 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,14 +136,14 @@ int	box_sorter(void)
 	t_stack	*t;
 	int		counter;
 
-	counter = 5;
-	while ((list_size(a()) / counter) > 20)
+	counter = 2;
+	while (((list_size(a()) + 1) / counter) > 20)
 		counter++;
 	t = a()->next;
 	while (t)
 	{
-		t->box = (t->n / (list_size(a()) / counter));
+		t->box = (t->n / ((list_size(a()) + 2) / counter));
 		t = t->next;
 	}
-	return (counter);
+	return (counter - 1);
 }

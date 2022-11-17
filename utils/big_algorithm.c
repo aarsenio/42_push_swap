@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:38:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 11:10:26 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:38 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	exist_box(int nbr)
 
 void	big_algo(int nbr)
 {
-	while (nbr > 0)
+	while (nbr >= 0)
 	{
 		while (exist_box(nbr))
 		{
