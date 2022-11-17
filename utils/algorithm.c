@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:01:57 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 21:47:59 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 00:22:25 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	algo_3(void)
 {
-	if (a()->next->i < a()->next->next->i && a()->next->next->i > \
-	a()->next->next->next->i && a()->next->i < a()->next->next->next->i)
+	if (a()->next->n < a()->next->next->n && a()->next->next->n > \
+	a()->next->next->next->n && a()->next->n < a()->next->next->next->n)
 	{
 		sa();
 		ra();
 	}
-	if (a()->next->i < a()->next->next->i && a()->next->next->i > \
-	a()->next->next->next->i && a()->next->i > a()->next->next->next->i)
+	if (a()->next->n < a()->next->next->n && a()->next->next->n > \
+	a()->next->next->next->n && a()->next->n > a()->next->next->next->n)
 		rra();
-	if (a()->next->i > a()->next->next->i && a()->next->next->i < \
-	a()->next->next->next->i && a()->next->i < a()->next->next->next->i)
+	if (a()->next->n > a()->next->next->n && a()->next->next->n < \
+	a()->next->next->next->n && a()->next->n < a()->next->next->next->n)
 		sa();
-	if (a()->next->i > a()->next->next->i && a()->next->next->i < \
-	a()->next->next->next->i && a()->next->i > a()->next->next->next->i)
+	if (a()->next->n > a()->next->next->n && a()->next->next->n < \
+	a()->next->next->next->n && a()->next->n > a()->next->next->next->n)
 		ra();
-	if (a()->next->i > a()->next->next->i && a()->next->next->i > \
-	a()->next->next->next->i && a()->next->i > a()->next->next->next->i)
+	if (a()->next->n > a()->next->next->n && a()->next->next->n > \
+	a()->next->next->next->n && a()->next->n > a()->next->next->next->n)
 	{
 		ra();
 		sa();
@@ -41,10 +41,13 @@ void	algo_5(void)
 {
 	while (list_size(a()) > 3)
 	{
-		if (a()->next->i != minmax(a(), 0))
-			ra();
+		if (smart_rotation(a(), minmax(a(), 0)))
+			while (a()->next->n !=  minmax(a(), 0))
+				rra();
 		else
-			pb();
+			while (a()->next->n !=  minmax(a(), 0))
+				ra();
+		pb();
 	}
 	algo_3();
 	pa();

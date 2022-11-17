@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 21:58:26 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 00:10:45 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	print_list(t_stack *x)
 	while (t)
 	{
 		printf("%d  -  ", t->x);
-		printf("%d\n", t->i);
+		printf("%d  -  ", t->n);
+		printf("%d\n", t->box);
 		t = t->next;
 	}
 }
@@ -38,7 +39,7 @@ void	add_node(t_stack *new, t_stack *x)
 	}
 }
 
-t_stack	*new_node(int n)
+t_stack	*new_node(int nbr)
 {
 	t_stack	*new;
 
@@ -46,7 +47,8 @@ t_stack	*new_node(int n)
 	if (!new)
 		return (NULL);
 	new->next = NULL;
-	new->x = n;
+	new->x = nbr;
+	new->n = 1;
 	return (new);
 }
 
@@ -71,13 +73,13 @@ int	minmax(t_stack *x, int type)
 	t_stack	*t;
 
 	t = x->next;
-	i = t->i;
+	i = t->n;
 	if (type == 1)
 	{
 		while (t)
 		{
-			if (t->i > i)
-				i = t->i;
+			if (t->n > i)
+				i = t->n;
 			t = t->next;
 		}
 	}
@@ -85,8 +87,8 @@ int	minmax(t_stack *x, int type)
 	{
 		while (t)
 		{
-			if (t->i < i)
-				i = t->i;
+			if (t->n < i)
+				i = t->n;
 			t = t->next;
 		}
 	}
@@ -105,25 +107,43 @@ void	set_index(void)
 		while (t2)
 		{
 			if (t->x > t2->x)
-				t->i++;
+				t->n++;
 			t2 = t2->next;
 		}
 		t = t->next;
 	}
 }
 
-int	smart_rotate(t_stack *x, int type)
+int	smart_rotation(t_stack *x, int i)
 {
-	t_stack *t;
-	int		i;
-
-	t = a()->next;
-	i = 1;
+	t_stack	*t;
+	int		counter;
+	
+	t = x->next;
+	counter = 1;
 	while (t)
 	{
-		if (t->i == minmax(x, type))
+		if (t->n == i)
 			break ;
-		i++;
+		counter++;
+		t = t->next;	
 	}
-	return (i > (list_size(x) / 2));	
+	return (counter > ((list_size(x) + 1) / 2));
+}
+
+int	box_sorter(void)
+{
+	t_stack	*t;
+	int		counter;
+
+	counter = 5;
+	while ((list_size(a()) / counter) > 20)
+		counter++;
+	t = a()->next;
+	while (t)
+	{
+		t->box = (t->n / (list_size(a()) / counter));
+		t = t->next;
+	}
+	return (counter);
 }

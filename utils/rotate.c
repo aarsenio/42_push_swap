@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:27:53 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/08 21:35:47 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:40:05 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,37 @@
 
 void	ra(void)
 {
-	t_stack	*tmp;
+	t_stack	*t;
 
-	tmp = a()->next;
+	t = a()->next;
 	a()->next = a()->next->next;
-	tmp->next = NULL;
-	add_node(tmp, a());
+	t->next = NULL;
+	add_node(t, a());
 	write(1, "ra\n", 3);
 }
 
 void	rb(void)
 {
-	t_stack	*tmp;
+	t_stack	*t;
 
-	tmp = b()->next;
+	t = b()->next;
 	b()->next = b()->next->next;
-	tmp->next = NULL;
-	add_node(tmp, b());
+	t->next = NULL;
+	add_node(t, b());
 	write(1, "rb\n", 3);
 }
 
 void	rr(void)
 {
-	t_stack	*tmp;
+	t_stack	*t;
 
-	tmp = a()->next;
+	t = a()->next;
 	a()->next = a()->next->next;
-	tmp->next = NULL;
-	add_node(tmp, a());
-	tmp = b()->next;
+	t->next = NULL;
+	add_node(t, a());
+	t = b()->next;
 	b()->next = b()->next->next;
-	tmp->next = NULL;
-	add_node(tmp, b());
+	t->next = NULL;
+	add_node(t, b());
 	write(1, "rr\n", 3);
 }

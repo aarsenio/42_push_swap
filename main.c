@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/15 22:03:18 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 00:11:30 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,17 @@ static void	parse_arg(char **str)
 
 void	redirect(void)
 {
+	int	nbr;
+
+	nbr = box_sorter();
 	if (list_size(a()) == 2 && a()->next->x > a()->next->next->x)
 		sa();
 	if (list_size(a()) == 3)
 		algo_3();
 	if (list_size(a()) == 4 || list_size(a()) == 5)
 		algo_5();
+	if (list_size(a()) > 5)
+		big_algo(nbr);
 }
 
 int	main(int ac, char **av)
@@ -91,7 +96,6 @@ int	main(int ac, char **av)
 	duplicate_numbers();
 	set_index();
 	redirect();
-	printf("%i\n", minmax(a(), 0));
 	printf("stack a:\n");
 	print_list(a());
 	printf("stack b:\n");
