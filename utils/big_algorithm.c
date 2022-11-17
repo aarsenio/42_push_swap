@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:38:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 12:48:38 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 13:07:24 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void	big_algo(int nbr)
 					ra();
 			pb();
 		}
+		if (exist_box(nbr + 1))
+			while (a()->next->box != (nbr + 1))
+				ra();
 		while (list_size(b()) > 0)
 		{
 			if (smart_rotation(b(), minmax(b(), 1)))
