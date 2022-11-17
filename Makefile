@@ -4,7 +4,8 @@ SRCS	= main.c \
 		  utils/push.c \
 		  utils/rotate.c \
 		  utils/reverse_rotate.c \
-		  utils/algorithm.c \
+		  utils/small_algorithm.c \
+		  utils/big_algorithm.c \
 		  utils/exit_program.c \
 		  utils/list_call.c
 

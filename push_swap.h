@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 00:22:37 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:09:01 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	rrb(void);
 void	rrr(void);
 void	algo_3(void);
 void	algo_5(void);
+void	big_algo(int nbr);
 void	exit_program(void);
 void	print_error(char *str, int error);
 

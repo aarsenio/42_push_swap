@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 00:11:30 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:18:54 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,15 @@ void	redirect(void)
 	int	nbr;
 
 	nbr = box_sorter();
-	if (list_size(a()) == 2 && a()->next->x > a()->next->next->x)
+	printf("%i\n", nbr);
+	/*if (list_size(a()) == 2 && a()->next->x > a()->next->next->x)
 		sa();
 	if (list_size(a()) == 3)
 		algo_3();
 	if (list_size(a()) == 4 || list_size(a()) == 5)
 		algo_5();
 	if (list_size(a()) > 5)
-		big_algo(nbr);
+		big_algo(nbr);*/
 }
 
 int	main(int ac, char **av)
