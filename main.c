@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/21 16:01:14 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:19:03 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static long	atoi_parse(char **str)
 	{
 		n = n * 10 + s * (**str - '0');
 		if (n < INT_MIN || n > INT_MAX)
-			print_error("Out of int range", 1);
+			print_error("Out of int range");
 		*str += 1;
 	}
 	if (!((**str > 8 && **str < 14) || **str == 32) && **str)
-		print_error("Invalid character", 1);
+		print_error("Invalid character");
 	while ((**str > 8 && **str < 14) || **str == 32)
 		*str += 1;
 	return (n);
@@ -54,7 +54,7 @@ void	duplicate_numbers(void)
 		while (tmp2)
 		{
 			if (tmp->x == tmp2->x)
-				print_error("Duplicated Numbers", 1);
+				print_error("Duplicated Numbers");
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;

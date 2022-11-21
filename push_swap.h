@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/21 16:33:28 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:18:36 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void	algo_3(void);
 void	algo_5(void);
 void	big_algo(int nbr);
 void	exit_program(void);
-void	print_error(char *str, int error);
+void	print_error(char *str);
 
 #endif

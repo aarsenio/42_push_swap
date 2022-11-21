@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:00:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/11 11:49:33 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:18:26 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ void	exit_program(void)
 	exit(1);
 }
 
-void	print_error(char *str, int error)
+void	print_error(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (error)
-		write(1, "Error\n", 7);
+	write(1, "Error\n", 7);
 	while (str[i])
 	{
 		write(1, &str[i], 1);
