@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:38:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/21 16:41:18 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:28:24 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,20 @@ static int	exist_box(int nbr)
 	return (0);
 }
 
+static void	empty_b_stack(void)
+{
+	while (list_size(b()) > 0)
+	{
+		if (smart_rotation(b(), minmax(b(), 1)))
+			while (b()->next->n != minmax(b(), 1))
+				rrb();
+		else
+			while (b()->next->n != minmax(b(), 1))
+				rb();
+		pa();
+	}
+}
+
 int	box_sorter(void)
 {
 	t_stack	*t;
@@ -87,16 +101,7 @@ void	big_algo(int nbr)
 		if (exist_box(nbr + 1))
 			while (a()->next->box != (nbr + 1))
 				ra();
-		while (list_size(b()) > 0)
-		{
-			if (smart_rotation(b(), minmax(b(), 1)))
-				while (b()->next->n != minmax(b(), 1))
-					rrb();
-			else
-				while (b()->next->n != minmax(b(), 1))
-					rb();
-			pa();
-		}
+		empty_b_stack();
 		nbr--;
 	}
 }
