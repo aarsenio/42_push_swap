@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/11/17 12:47:13 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:01:14 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	redirect(void)
 	int	nbr;
 
 	nbr = box_sorter();
-	printf("%i\n", nbr);
 	if (list_size(a()) == 2 && a()->next->x > a()->next->next->x)
 		sa();
 	if (list_size(a()) == 3)
@@ -97,9 +96,5 @@ int	main(int ac, char **av)
 	duplicate_numbers();
 	set_index();
 	redirect();
-	printf("stack a:\n");
-	print_list(a());
-	printf("stack b:\n");
-	print_list(b());
 	exit_program();
 }
