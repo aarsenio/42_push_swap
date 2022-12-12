@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:16:04 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/05 15:44:55 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:38:23 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,19 +97,6 @@ void	set_index(void)
 				t->n++;
 			t2 = t2->next;
 		}
-		t = t->next;
-	}
-}
-
-void	print_list(t_stack *x)
-{
-	t_stack	*t;
-
-	t = x->next;
-	while (t)
-	{
-		printf("%i - ", t->n);
-		printf("%i\n", t->box);
 		t = t->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/05 15:40:21 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:38:09 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,10 @@ void	redirect(void)
 		algo_3();
 	if (list_size(a()) == 4 || list_size(a()) == 5)
 		algo_5();
-	if (list_size(a()) > 5)
+	if (list_size(a()) > 5 && list_size(a()) <= 200)
 		big_algo(nbr);
+	if (list_size(a()) > 200)
+		radix_sort();
 }
 
 int	main(int ac, char **av)
@@ -96,9 +98,5 @@ int	main(int ac, char **av)
 	duplicate_numbers();
 	set_index();
 	redirect();
-	/*printf("stack a:\n");
-	print_list(a());
-	printf("stack b:\n");
-	print_list(b());*/
 	exit_program();
 }

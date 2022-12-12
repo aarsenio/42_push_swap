@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/05 16:36:55 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:38:34 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	rrr(void);
 void	algo_3(void);
 void	algo_5(void);
 void	big_algo(int nbr);
+void	radix_sort(void);
 void	exit_program(void);
 void	print_error(char *str);
-void	print_list(t_stack *x);
 
 #endif

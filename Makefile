@@ -7,7 +7,8 @@ SRCS	= main.c \
 		  utils/small_algorithm.c \
 		  utils/big_algorithm.c \
 		  utils/exit_program.c \
-		  utils/list_call.c
+		  utils/list_call.c \
+		  utils/radix.c
 
 OBJS	= $(SRCS:.c=.o)
 
