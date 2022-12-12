@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:00:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/12 15:37:47 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:10:21 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	exit_program(int error)
 {
 	t_stack	*tmp;
-	
+
 	if (error)
 		write(2, "Error\n", 7);
 	while (a()->next)
