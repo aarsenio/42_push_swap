@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:01:41 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/05 16:36:37 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:34:31 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,18 @@ t_stack	*b(void)
 	static t_stack	b;
 
 	return (&b);
+}
+
+int	is_sorted(void)
+{
+	t_stack	*t;
+
+	t = a()->next;
+	while (t->next)
+	{
+		if (t->x > t->next->x)
+			return (0);
+		t = t->next;
+	}
+	return (1);
 }

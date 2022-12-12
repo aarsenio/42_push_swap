@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:01 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/12 14:38:34 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:37:02 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_stack	*b(void);
 t_stack	*new_node(int nbr);
 void	add_node(t_stack *new, t_stack *x);
 int		list_size(t_stack *x);
+int		is_sorted(void);
 int		minmax(t_stack *x, int type);
 void	set_index(void);
 int		box_sorter(void);
@@ -49,7 +50,6 @@ void	algo_3(void);
 void	algo_5(void);
 void	big_algo(int nbr);
 void	radix_sort(void);
-void	exit_program(void);
-void	print_error(char *str);
+void	exit_program(int error);
 
 #endif

@@ -6,25 +6,11 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:17:33 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/12 14:28:07 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:39:58 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <limits.h>
-
-static void	find_max(int *n)
-{
-	t_stack	*t;
-
-	t = a()->next;
-	while (t)
-	{
-		if (*n < t->n)
-			*n = t->n;
-		t = t->next;
-	}
-}
 
 static int	find_max_bits(void)
 {
@@ -32,8 +18,7 @@ static int	find_max_bits(void)
 	int	bits;
 
 	bits = 0;
-	max = INT_MIN;
-	find_max(&max);
+	max = minmax(a(), 1);
 	while (max && ++bits)
 		max >>= 1;
 	return (bits);
