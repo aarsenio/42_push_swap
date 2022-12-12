@@ -6,20 +6,15 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:19:05 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/12/12 15:38:31 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:58:58 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-static long	atoi_parse(char **str)
+static long	atoi_parse(char **str, int s, long long n)
 {
-	int			s;
-	long long	n;
-
-	s = 1;
-	n = 0;
 	while ((**str > 8 && **str < 14) || **str == 32)
 		*str += 1;
 	if (**str == '-' || **str == '+')
@@ -27,6 +22,8 @@ static long	atoi_parse(char **str)
 		if (**str == '-')
 			s *= -1;
 		*str += 1;
+		if (**str < '0' || **str > '9')
+			exit_program(1);
 	}
 	while (**str >= '0' && **str <= '9')
 	{
@@ -69,7 +66,7 @@ static void	parse_arg(char **str)
 	while (str[i])
 	{
 		while (str[i] && *str[i])
-			add_node(new_node(atoi_parse(&str[i])), a());
+			add_node(new_node(atoi_parse(&str[i], 1, 0)), a());
 		i++;
 	}
 }
